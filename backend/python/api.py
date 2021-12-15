@@ -3,8 +3,8 @@ from urllib.parse import urlsplit, parse_qs
 from csv import reader
 from json import dumps
 
-host_name = ""
-host_port = 8080
+host_name = "0.0.0.0"
+host_port = 443
 data_path = 'data.txt'
 
 def get_data():

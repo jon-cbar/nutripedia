@@ -25,16 +25,19 @@ def get_food(food_id):
 		print("Food not found")
 	return food
 	
-def get_all():
+def get_thumbs():
 	data = get_data()
-	return data
+	thumbs = {}
+	for key in data:
+		thumbs[key] = data[key][:2]
+	return thumbs
 
 class MyServer(BaseHTTPRequestHandler):
 	def do_GET(self):
 
 		food_id = urlsplit(self.path).path[1:]
 		if food_id == '':
-			content = get_all()
+			content = get_thumbs()
 		else:
 			content = get_food(food_id)
 		

@@ -5,7 +5,7 @@ from json import dumps
 from os import environ
 
 host_name = "0.0.0.0"
-host_port = int(environ.get('PORT'))
+host_port = int(environ.get('PORT', '443'))
 data_path = 'data.txt'
 
 def get_data():

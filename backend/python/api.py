@@ -2,10 +2,10 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlsplit, parse_qs
 from csv import reader
 from json import dumps
-from os import getenv
+from os import environ
 
 host_name = "0.0.0.0"
-host_port = getenv('PORT')
+host_port = environ.get('PORT')
 data_path = 'data.txt'
 
 def get_data():

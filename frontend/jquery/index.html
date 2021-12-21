@@ -2,49 +2,52 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" href="nutripedia.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <meta name="theme-color" content="#000000"/>
+        <link rel="shortcut icon" href="nutripedia.png" />
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Nutripedia</title>
     </head>
     <body>
         <noscript>Você precisa habilitar o JavaScrript para carregar esta página.</noscript>
         <header>
             <img src="nutripedia.png" title="Nutripedia" />
-            <span>Nutripedia</span>
+            <h1>Nutripedia</h1>
         </header>
         <main>
-            <div id="thumbs">
-
-            </div>
-            <div id="food"></div>
+            <ul id="cards"></ul>
         </main>
+        <section id="modal">
+            <div class="content">
+                <section class="top">
+                    <div id="food-image"></div>
+                    <div>
+                        <div class="header">
+                            <h2 id="food-name"></h2>
+                            <div id='closeButton'>Fechar</div>
+                        </div>
+                        <h3>Propriedades (efeitos)</h3>
+                        <p id="food-properties"></p>    
+                        <h3>Benefícios em relação às doenças crônicas não transmissíveis (DCNTs)</h3>
+                        <p id="food-benefits"></p>
+                    </div>
+                </section>
+                <section class="bottom">
+                    <h3>Compostos funcionais (comp. bioativos)</h3>
+                    <p id="food-composition"></p>
+                    <h3>Mecanismo de ação</h3>
+                    <p id="food-action"></p>
+                    <h3>Nutrientes em destaque</h3>
+                    <p id="food-nutrients"></p>
+                    <h3>Porção diária sugerida e frequência de consumo</h3>
+                    <p id="food-daily-portion"></p>
+                </section>
+            </div>
+        </section>
         <footer>
 
         </footer>
-        <script>
-            $(document).ready(function() {
-                let endpoint = 'https://nutripedia-api.herokuapp.com/';
-                $.get(endpoint, function(thumbs) {
-                    $.each(thumbs, function(key, value) {
-                        let thumb = document.createElement('div');
-                        thumb.id = key;
-                        
-                        let title = document.createElement('span');
-                        title.innerText = value[0];
-                        
-                        let img = document.createElement('img');
-                        img.title = value[0];
-                        img.src = value[1];
-
-                        thumb.appendChild(img);
-                        thumb.appendChild(title);
-
-                        $('#thumbs').append(thumb);
-                        //console.log(key + '-' + value[0] + '-' + value[1]);
-                    });
-                });
-            });
-        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

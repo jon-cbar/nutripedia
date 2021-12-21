@@ -1,2 +1,2 @@
 # nutripedia
-Nutritional food catalog 
+Nutritional Food Catalog Frontend

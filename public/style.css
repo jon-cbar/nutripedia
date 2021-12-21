@@ -92,16 +92,24 @@ li h2 {
     border-radius: 0.25rem;
     background: ghostwhite;
     color: black;
-    transform: scale(1);
 }
 .content .top {
     display: flex;
+    flex-direction: column;
 }
 .content #food-image {
-    min-width: 40%;
-    max-width: 40%;
+    width: 100%;
     margin-right: 1rem;
     margin-bottom: 1rem;
+}
+@media only screen and (min-width: 768px) {
+    .content .top {
+        flex-direction: row;
+    }
+    .content #food-image {
+        min-width: 40%;
+        max-width: 40%;
+    }
 }
 .content img {
     width: 100%;

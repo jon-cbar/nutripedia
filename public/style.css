@@ -102,6 +102,12 @@ li h2 {
     margin-right: 1rem;
     margin-bottom: 1rem;
 }
+.content .closeIcon {
+    display: block;
+}
+.content .closeText {
+    display: none;
+}
 @media only screen and (min-width: 768px) {
     .content .top {
         flex-direction: row;
@@ -109,6 +115,12 @@ li h2 {
     .content #food-image {
         min-width: 40%;
         max-width: 40%;
+    }
+    .content .closeIcon {
+        display: none;
+    }
+    .content .closeText {
+        display: block;
     }
 }
 .content img {
@@ -120,8 +132,10 @@ li h2 {
     justify-content: space-between;
 }
 .content h2 {
-    height: 1rem;
+    position: relative;
+    bottom: 1rem;
     font-size: x-large;
+    font-weight: bold;
     color: purple;
 }
 #closeButton {

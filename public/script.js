@@ -1,4 +1,4 @@
-const api = 'https://nutripedia-api.herokuapp.com/';
+const api = 'https://nutripedia.herokuapp.com/api/';
 
 function createTitle(title) {
     let titleElement = document.createElement('h2');
